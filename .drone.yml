@@ -1,6 +1,6 @@
 matrix:
   NAME:
-    - ukhomeofficedigital/dsa-jira
+    - ukhomeofficedigital/dsa-elasticsearch
   DOCKER_REPO:
     - quay.io
   DOCKER_USERNAME:
