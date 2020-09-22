@@ -8,6 +8,8 @@ RUN echo "y" | /usr/share/elasticsearch/bin/elasticsearch-plugin install reposit
 # add custom scripts
 COPY --chown=elasticsearch:root [ "scripts/start_elasticsearch.sh", "/usr/local/bin" ]
 
+RUN chmod 755 /usr/local/bin/start_elasticsearch.sh
+
 # update underlying OS
 USER root
 RUN yum clean all && yum update -y && yum clean all
