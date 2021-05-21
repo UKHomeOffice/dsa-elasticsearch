@@ -13,7 +13,6 @@ steps:
   # image: docker
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
   commands:
-  - systemctl docker start
   - docker build -t quay.io/ukhomeofficedigital/dsa-elasticsearch:$${DRONE_COMMIT_SHA} .
   # environment:
     # DOCKER_HOST: tcp://172.17.0.1:2375
@@ -41,7 +40,10 @@ steps:
     event:
     - push
 
-...
+services:
+- name: docker
+  image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  #image: docker
 
 ---
 kind: pipeline
@@ -88,8 +90,8 @@ steps:
   
 services:
 - name: docker
-  #image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-  image: docker
+  image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  #image: docker
 
 trigger:
   event:
