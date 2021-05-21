@@ -10,8 +10,8 @@ platform:
 steps:
 - name: docker-build
   pull: if-not-exists
-  # image: docker
-  image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  image: docker
+  # image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
   commands:
   - n=0; while [ "$n" -lt 60 ] && [ ! docker stats --no-stream ]; do n=$(( n + 1 )); sleep 1; done
   - docker build -t quay.io/ukhomeofficedigital/dsa-elasticsearch:$${DRONE_COMMIT_SHA} .
@@ -88,8 +88,8 @@ steps:
   
 services:
 - name: docker
-  image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
-
+  #image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
+  image: docker
 
 trigger:
   event:
