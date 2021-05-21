@@ -33,7 +33,7 @@ steps:
   environment:
     # DOCKER_HOST: tcp://172.17.0.1:2375
     DOCKER_TOKEN:
-      from_secret: docker_token
+      from_secret: DOCKER_TOKEN
   when:
     branch:
     - master
