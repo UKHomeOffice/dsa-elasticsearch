@@ -12,7 +12,7 @@ RUN chmod 755 /usr/local/bin/start_elasticsearch.sh
 
 # update underlying OS
 USER root
-RUN yum clean all && yum update -y && yum clean all
+RUN yum update -y && yum clean all
 
 # run as the elasticsearch user (1000:1000)
 USER 1000
