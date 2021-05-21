@@ -13,7 +13,7 @@ steps:
   # image: docker
   image: 340268328991.dkr.ecr.eu-west-2.amazonaws.com/acp/dind
   commands:
-  - sudo service docker start
+  - service docker start
   - docker build -t quay.io/ukhomeofficedigital/dsa-elasticsearch:$${DRONE_COMMIT_SHA} .
   # environment:
     # DOCKER_HOST: tcp://172.17.0.1:2375
